@@ -6,22 +6,41 @@ let liste = [10, 34, 56, 67, 23, 563];
 // opération : la boucle while
 
 
+// chercher une valeur dans un tableau
 
-// initialisation de la boucles 
+let nombreAChercher = 5;
 
-let i = 0; //1
+let i = 0; 
 
 while(i < liste.length){
-    let r = liste [i]; //2
-    console.log(r); // 2
-    console.log("");
-
-    i++ //1
+    // comparer valeur de l'iteration avec valeur a chercher
+    if (liste[i] === nombreAChercher){
+        // si valeur correspond log messsage
+        console.log(nombreAChercher + " est dans la liste à l'index " + 1);
+        break;
+    }
+    // si valeur ne correspond pas => go next iteration
+    i++
 }
 
-/*
 
-Le code en 1 n'est pas du code métier => c'est du code pour faire fonctionner ma boucle
-le code en 2 est du traitement
+// VERSION 2 - BETTER CODE
 
-*/
+let nombreAChercher = 5;
+let isFind = false;
+let i = 0; 
+
+while(i < liste.length && !isFind){
+    if (liste[i] === nombreAChercher){
+        isFind = !isFind; //isFind = true;
+    }
+    i++
+}
+
+if(isFind){
+    console.log('valeur trouvé');
+}else{
+    console.log('valeur pas dans la liste');
+}
+
+// intérêt séparation du code : init variable / traitement / affichage
