@@ -3,7 +3,7 @@ let listeNonTriee = [44,55,42,5,10];
 
 let listeTriee = [];
 
-arrayIsSorted = false
+let arrayIsSorted = false;
 
 // Bubble sort
 
@@ -12,22 +12,29 @@ arrayIsSorted = false
 
 // implémenter un algorithme de tri à bulle (pas de copy / paste)
 
+while (arrayIsSorted === false) {
 
-for(let i = 0; i < listeNonTriee.length; i++ ){
+    for (let i = 0 ; i < (listeNonTriee.length); i++) {
+        
+        let transitVariable = 0;
+        
+        if(listeNonTriee[i] > listeNonTriee[i+1]){
+            transitVariable = listeNonTriee[i];
+            listeNonTriee[i] = listeNonTriee[i+1];
+            listeNonTriee[i+1] = transitVariable;
+        }
 
-    // check if array is sorted
-
-    while
-
-    let tempActualValue = listeNonTriee[i];
-    let tempActualValueNext = listeNonTriee[i+1];
-
-    if(listeNonTriee[i] > listeNonTriee[i+1]){
-        tempActualValue = listeNonTriee[i+1];
-        tempActualValueNext = listeNonTriee[i];
+        for (let i = 0; i < (listeNonTriee.length - 1); i++) {
+            if (listeNonTriee[i] < listeNonTriee[i + 1]) {
+                arrayIsSorted = true
+            } else if (listeNonTriee[i] > listeNonTriee[i + 1]) {
+                arrayIsSorted = false
+                break;
+            }
+        }
     }
-
 }
 
+console.log(listeNonTriee);
 
 
