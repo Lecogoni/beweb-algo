@@ -19,13 +19,15 @@ for(let i = 0; i < listeNonTriee.length; i++ ){
 
     while
 
-    let tempActuali = listeNonTriee[i];
-    let tempActualiNext = listeNonTriee[i+1];
+    let tempActualValue = listeNonTriee[i];
+    let tempActualValueNext = listeNonTriee[i+1];
 
     if(listeNonTriee[i] > listeNonTriee[i+1]){
-        tempActuali = listeNonTriee[i+1];
-        tempActualiNext = listeNonTriee[i];
+        tempActualValue = listeNonTriee[i+1];
+        tempActualValueNext = listeNonTriee[i];
     }
 
 }
+
+
 
